@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Journey</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div class="input_journey">
+        <form id="input_form">
+            <label for="from">From</label>
+            <input id="from" type="text" placeholder="Current location"><br>
+            <label for="to">To</label>
+            <input id="to" placeholder="Destination" type="text"><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+    <div class="output" style="display: none;" >
+        <div id="map">Loading Map...</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
