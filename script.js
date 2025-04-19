@@ -2,6 +2,9 @@ const inputJourney = document.querySelector(".input_journey");
 const submit = document.getElementById("submit");
 const output = document.querySelector(".output");
 
+const port = process.env.mapAPI
+const url = process.env.url
+
 submit.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -22,7 +25,7 @@ submit.addEventListener("click", (e) => {
         geocodeLocation(toLocation, (toGeocode) => {
             console.log("To Geocode: ", toGeocode);
 
-            fetch('http://127.0.0.1:5000/route', {
+            fetch('url', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -66,7 +69,7 @@ function initMap(route) {
     const map = L.map('map').setView([route[0].lat, route[0].lng], 13);
 
     // Add OpenStreetMap tiles
-    L.tileLayer('https://api.maptiler.com/tiles/satellite-mediumres/?key=KqZnOLSUd6AO3nx6HZLN#2.5774288280357487/0/0', {
+    L.tileLayer('https://api.maptiler.com/tiles/satellite-mediumres/?key=mapAPI#', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
